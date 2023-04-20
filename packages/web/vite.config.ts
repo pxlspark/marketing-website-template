@@ -1,14 +1,16 @@
 import dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
 
-dotenv.config({
+const envConfig = dotenv.config({
   path: "../../.env",
 });
-const envConfig = dotenv.config({
+
+const envLocalConfig = dotenv.config({
   path: ".env.local",
 });
 
 dotenvExpand.expand(envConfig);
+dotenvExpand.expand(envLocalConfig);
 
 import { UserConfig } from "vite";
 import path from "path";
